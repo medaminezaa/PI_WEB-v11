@@ -1,0 +1,11 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show">
+    <center>
+        <h4>{{ 'profile.show.username'|trans }}: {{ user.username }}</h4>
+        <h4>{{ 'profile.show.email'|trans }}: {{ user.email }}</h4>
+        <form action="{{path('fos_user_profile_edit')}}" >
+            <input type="submit" class="btn btn-info" value="Modifier le compte">
+        </form>
+    </center>
+</div>

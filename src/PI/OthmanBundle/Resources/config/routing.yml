@@ -1,0 +1,3 @@
+admin_accueil:
+    path:     /admin/Accueil
+    defaults: { _controller: PIOthmanBundle:Default:index }

@@ -1,0 +1,62 @@
+{% extends "PIBaseBundle::layout.html.twig" %}
+
+
+{% block head %}
+    {{ parent() }}
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Google fonts -->
+    <link href='{{ asset('http://fonts.googleapis.com/css?family=Roboto:400,300,700')}}' rel='stylesheet' type='text/css'>
+    <link href='{{ asset('http://fonts.googleapis.com/css?family=Josefin+Sans:600')}}' rel='stylesheet' type='text/css'>
+
+    <!-- font awesome -->
+    <link href="{{ asset('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')}}" rel="stylesheet">
+
+    <!-- bootstrap --
+<link rel="stylesheet" href="{{ asset('assets2/bootstrap/css/bootstrap.min.css')}}" />
+
+<!-- animate.css -->
+    <link rel="stylesheet" href="{{ asset('assets2/animate/animate.css')}}" />
+    <link rel="stylesheet" href="{{ asset('assets2/animate/set.css')}}" />
+
+    <!-- gallery -->
+    <link rel="stylesheet" href="{{ asset('assets2/gallery/blueimp-gallery.min.css')}}">
+
+
+    <link rel="stylesheet" href="{{ asset('assets2/style.css')}}">
+{% endblock %}
+
+{% block body %}
+
+    {% block header %}
+        {{ parent() }}
+    {% endblock %}
+    {% block banner %}
+        {{ parent() }}
+    {% endblock %}
+    {% block content %}
+        {{ parent() }}
+        <div class="main">
+            <div class="content-top">
+
+<h1>Bienvenue !</h1>
+
+            </div>
+
+        </div>
+    {% endblock %}
+
+    {% block footer %}
+        {{ parent() }}
+
+
+    {% endblock %}
+    {% block js %}
+        {{ parent() }}
+
+
+    {% endblock %}
+
+{% endblock %}
