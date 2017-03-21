@@ -1,0 +1,3 @@
+p_iguides_homepage:
+    path:     /
+    defaults: { _controller: PIguidesBundle:Default:index }

@@ -1,3 +1,7 @@
+p_iguides:
+    resource: "@PIguidesBundle/Resources/config/routing.yml"
+    prefix:   /
+
 pi_reclamation:
     resource: "@PIReclamationBundle/Resources/config/routing.yml"
     prefix:   /
