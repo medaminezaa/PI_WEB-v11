@@ -19,8 +19,11 @@ class AppKernel extends Kernel
             new MyApp\UserBundle\MyAppUserBundle(),
             new PI\BaseBundle\PIBaseBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new PI\AzmiBundle\PIAzmiBundle(),
-            new PI\OthmanBundle\PIOthmanBundle(),
+            new PI\MaterielBundle\PIMaterielBundle(),
+            new PI\ForumBundle\PIForumBundle(),
+            new PI\GestionAdminBundle\PIGestionAdminBundle(),
+            new PI\GestionRandonneurBundle\PIGestionRandonneurBundle(),
+            new PI\ReclamationBundle\PIReclamationBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

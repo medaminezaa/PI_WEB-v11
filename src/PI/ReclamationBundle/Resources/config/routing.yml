@@ -1,0 +1,3 @@
+pi_reclamation_homepage:
+    path:     /
+    defaults: { _controller: PIReclamationBundle:Default:index }

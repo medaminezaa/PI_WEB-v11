@@ -1,6 +1,6 @@
 <?php
 
-namespace PI\AzmiBundle\Controller;
+namespace PI\GestionRandonneurBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('PIAzmiBundle:Default:index.html.twig');
+        return $this->render('PIGestionRandonneurBundle:Default:index.html.twig');
     }
 }

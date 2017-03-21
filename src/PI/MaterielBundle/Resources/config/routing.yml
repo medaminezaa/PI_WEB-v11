@@ -1,0 +1,3 @@
+pi_materiel_homepage:
+    path:     /
+    defaults: { _controller: PIMaterielBundle:Default:index }

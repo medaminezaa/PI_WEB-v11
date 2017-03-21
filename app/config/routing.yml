@@ -1,10 +1,23 @@
-pi_othman:
-    resource: "@PIOthmanBundle/Resources/config/routing.yml"
+pi_reclamation:
+    resource: "@PIReclamationBundle/Resources/config/routing.yml"
     prefix:   /
 
-pi_azmi:
-    resource: "@PIAzmiBundle/Resources/config/routing.yml"
+pi_gestion_randonneur:
+    resource: "@PIGestionRandonneurBundle/Resources/config/routing.yml"
     prefix:   /
+
+pi_gestion_admin:
+    resource: "@PIGestionAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pi_forum:
+    resource: "@PIForumBundle/Resources/config/routing.yml"
+    prefix:   /
+
+pi_materiel:
+    resource: "@PIMaterielBundle/Resources/config/routing.yml"
+    prefix:   /
+
 
 pi_base:
     resource: "@PIBaseBundle/Resources/config/routing.yml"

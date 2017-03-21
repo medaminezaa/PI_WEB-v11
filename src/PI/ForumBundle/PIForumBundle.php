@@ -1,9 +1,9 @@
 <?php
 
-namespace PI\AzmiBundle;
+namespace PI\ForumBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PIAzmiBundle extends Bundle
+class PIForumBundle extends Bundle
 {
 }
