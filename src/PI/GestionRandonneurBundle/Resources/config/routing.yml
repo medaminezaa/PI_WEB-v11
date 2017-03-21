@@ -1,3 +1,0 @@
-pi_gestion_randonneur_homepage:
-    path:     /
-    defaults: { _controller: PIGestionRandonneurBundle:Default:index }

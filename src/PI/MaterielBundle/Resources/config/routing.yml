@@ -1,3 +1,3 @@
-pi_materiel_homepage:
-    path:     /
-    defaults: { _controller: PIMaterielBundle:Default:index }
+admin_materiel:
+    path:     /admin/afficheMateriel
+    defaults: { _controller: PIMaterielBundle:GestionMateriel:afficher}

@@ -1,0 +1,31 @@
+{% extends "PIBaseBundle::layoutadmin.html.twig" %}
+{% block content %}
+
+    <h3>Liste materiel </h3>
+
+
+
+
+
+
+
+    <table border="1">
+        <th>Nom</th>
+        <th>Prix</th>
+        <th>Description</th>
+        <th>type</th>
+        <th>Etat</th>
+        <th>Reference</th>
+        <th>Quantite</th>
+
+        {% for materiel in materiels %}
+            <tr>
+                <td>{{ materiel.nom }}</td>
+
+
+
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
