@@ -1,3 +1,0 @@
-pi_hedi_homepage:
-    path:     /materiel
-    defaults: { _controller: PIHediBundle:Default:index }

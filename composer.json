@@ -29,7 +29,22 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+        "knplabs/knp-paginator-bundle": "^2.5",
+        "knplabs/knp-snappy-bundle": "~1.4",
+        "knplabs/knp-menu-bundle": "^2.0",
+        "gregwar/captcha-bundle": "2.*",
+        "ob/highcharts-bundle": "dev-master",
+        "vich/uploader-bundle": "^1.4",
+        "blackknight467/star-rating-bundle": "2.*",
+        "nomaya/social-bundle": "dev-master",
+        "hwi/oauth-bundle": "^0.5.3",
+        "cboden/ratchet": "^0.3.6",
+        "pianosolo/weather-bundle": "^2.0",
+        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/message": "^1.5",
+        "egeloen/google-map": "^2.0",
+        "egeloen/serializer": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -63,4 +78,6 @@
         },
         "branch-alias": null
     }
+
+
 }

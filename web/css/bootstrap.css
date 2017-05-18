@@ -5,6 +5,13 @@
  */
 
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;

@@ -23,8 +23,16 @@
     <!-- gallery -->
     <link rel="stylesheet" href="{{ asset('assets2/gallery/blueimp-gallery.min.css')}}">
 
-
+<!--
     <link rel="stylesheet" href="{{ asset('assets2/style.css')}}">
+    <!--------------------------------tableau profile---------------------------------------------->
+    <link rel="stylesheet" href="{{ asset('assets/css/ace.min.css')}}" class="ace-main-stylesheet" id="main-ace-style" />
+    <!-->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css')}}" />
+
+{% endblock %}
+
+{% block banner %}
 {% endblock %}
 
 {% block login %}
@@ -33,3 +41,6 @@
 {% block fos_user_content %}
     {% include "FOSUserBundle:Profile:show_content.html.twig" %}
 {% endblock fos_user_content %}
+
+{% block footer %}
+{% endblock %}

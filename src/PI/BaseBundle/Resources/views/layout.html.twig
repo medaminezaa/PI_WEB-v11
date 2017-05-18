@@ -61,6 +61,119 @@
 
     <body>
                 {%block body %}
+					<!--  <title>{% block title %} Events {%endblock%}</title>-->
+                {% block header %}
+
+					<div class="header">
+
+
+
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="header-left">
+										<div class="logo">
+											<a href="{{path('pi_base_homepage')}}"><img src="{{asset('images/logo.png')}}" alt=""/></a>
+										</div>
+										<div class="menu">
+											<a class="toggleMenu" href="#"><img src="{{asset('images/nav.png')}}" alt="" /></a>
+											<ul class="nav" id="nav">
+											{% if is_granted('ROLE_RANDONNEUR') %}
+
+												<li><a href="{{path('pi_base_homepage')}}">Accueil </a></li>
+												<li><a href="{{path('Raffichecr')}}">Randonnées</a>
+												<li><a href="{{path('user_materiel')}}">Matériels</a></li>
+												<li><a href="{{ path('user_reclamationAjouter') }}">Reclamation materiel</a></li>
+
+												<li><a href="{{path('pi_sujet_affiche_front')}}">Sujet</a></li>
+												{% endif %}
+
+                                                {% if is_granted('ROLE_AGENCE') %}
+
+													<li><a href="{{path('pi_base_homepage')}}">Accueil </a></li>
+													<li><a href="{{path('affichecr')}}">Randonnées</a>
+													<li><a href="{{path('ajout')}}">ajouter une randonnée</a></li>
+													<li> <a href="{{path('Allrando')}}"> Toutes les randonnées</a> </li>
+													<li><a href="{{path('user_materiel')}}">Matériels</a></li>
+													<li><a href="{{path('pi_sujet_affiche_front')}}">Sujet</a></li>
+                                                {% endif %}
+
+                                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+													<li >
+														<a href="{{path('pi_disc')}}">
+															Chat
+														</a>
+													</li>
+													<li><a href="{{ path('fos_user_profile_show') }}">Profile</a></li>
+													<li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
+
+                                                {% else %}
+													<li><a href="{{ path('fos_user_registration_register') }}">Ouvrir un compte</a></li>
+													<li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
+                                                {% endif %}
+												<!--<li><a href="{{path('pi_base_homepage')}}">Créer un évènement </a></li>
+						        <!--<li><a href="contact.html">Contact</a></li>	-->
+												<div class="clear"></div>
+											</ul>
+											<script type="text/javascript" src="{{asset('js/responsive-nav.js')}}"></script>
+										</div>
+										<div class="clear"></div>
+									</div>
+									<div class="header_right">
+										<!-- start search-->
+										<div class="search-box" hidden>
+											<div id="sb-search" class="sb-search">
+												<form>
+													<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+													<input class="sb-search-submit" type="submit" value="">
+													<span class="sb-icon-search"> </span>
+												</form>
+											</div>
+										</div>
+										<!----search-scripts---->
+										<script src="{{asset('js/classie.js')}}"></script>
+										<script src="{{asset('js/uisearch.js')}}"></script>
+										<script>
+                                            new UISearch( document.getElementById( 'sb-search' ) );
+										</script>
+										<!----//search-scripts---->
+										<ul class="icon1 sub-icon1 profile_img">
+											<li><a class="active-icon c1" href="#"> </a>
+												<ul class="sub-icon1 list">
+													<div class="product_control_buttons">
+														<a href="{{path('fos_user_profile_edit')}}"><img src="{{asset('images/edit.png')}}" alt=""/></a>
+														<a href="#"><img src="{{asset('images/close_edit.png')}}" alt=""/></a>
+													</div>
+													<div class="clear"></div>
+                                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
+														<li class="list_img"><img src="{{ 'http://localhost/Image/' ~app.user.getImageName()}}"style="width: 50px;height: 49px" alt=""/></li>
+														<li class="list_desc"><h4><center> <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a></center></h4><span class="actual"> </span></li>
+														<center>
+															<div class="login_buttons">
+																<div class="check_button"><a href="{{ path('fos_user_security_logout') }}">Se déconnecter </a></div>
+                                                                {% if is_granted('ROLE_ADMIN') %}
+																	<div class="login_button"><a href="{{path('admin_accueil')}}">Administration </a></div>
+                                                                {% endif %}
+															</div>
+														</center>
+                                                    {% else %}
+														<div class="login_buttons">
+															<div class="check_button"><a href="{{ path('fos_user_security_login') }}">Se connecter </a></div>
+															<div class="login_button"><a href="{{ path('fos_user_registration_register') }}">Ouvrir un compte</a></div>
+															<div class="clear"></div>
+														</div>
+                                                    {% endif %}
+												</ul>
+											</li>
+										</ul>
+										<div class="clear"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                {%endblock%}
                     	{% block banner %}
 
 	<div class="banner">
@@ -89,7 +202,7 @@
                <img src="{{asset('images/slider2.jpg')}}" class="img-responsive" alt=""/>
                 <div class="slide_content">
                     <div class="slide_content_wrap">
-                        <h1 class="title">Créer vos<br>évènements</h1>
+                        <h1 class="title">Organisez vos<br>randonnées</h1>
                        	<div class="button"><a href="{{path('pi_base_homepage')}}">Voir Details</a></div>
                     </div>
                 </div>
@@ -105,99 +218,10 @@
       </div>
              {% endblock %}
              {% block banner2 %}
- 
+
                  {% endblock %}
 
-      <!--  <title>{% block title %} Events {%endblock%}</title>-->
-                                    {% block header %}
 
-        	<div class="header">
-                                        
-                                                               
-
-		<div class="container">
-			<div class="row">
-			  <div class="col-md-12">
-				 <div class="header-left">
-					 <div class="logo">
-						<a href="{{path('pi_base_homepage')}}"><img src="{{asset('images/logo.png')}}" alt=""/></a>
-					 </div>
-					 <div class="menu">
-						  <a class="toggleMenu" href="#"><img src="{{asset('images/nav.png')}}" alt="" /></a>
-						    <ul class="nav" id="nav">
-						    	<li><a href="{{path('pi_base_homepage')}}">Accueil </a></li>
-						    	<li><a href="{{path('pi_base_homepage')}}">Randonnées</a></li>
-                                                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-						    	<li><a href="{{ path('fos_user_profile_show') }}">Profile</a></li>
-                                                        <li><a href="{{ path('fos_user_security_logout') }}">Se déconnecter</a></li>
-                                                       
-                                                 {% else %}
-						    	<li><a href="{{ path('fos_user_registration_register') }}">Ouvrir un compte</a></li>
-                                                        <li><a href="{{ path('fos_user_security_login') }}">Se connecter</a></li>
-                                                {% endif %}
-						    	<!--<li><a href="{{path('pi_base_homepage')}}">Créer un évènement </a></li>
-						        <!--<li><a href="contact.html">Contact</a></li>	-->							
-								<div class="clear"></div>
-							</ul>
-							<script type="text/javascript" src="{{asset('js/responsive-nav.js')}}"></script>
-				    </div>							
-	    		    <div class="clear"></div>
-	    	    </div>
-	            <div class="header_right">
-	    		  <!-- start search-->
-				      <div class="search-box" hidden>
-							<div id="sb-search" class="sb-search">
-								<form>
-									<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-									<input class="sb-search-submit" type="submit" value="">
-									<span class="sb-icon-search"> </span>
-								</form>
-							</div>
-						</div>
-						<!----search-scripts---->
-						<script src="{{asset('js/classie.js')}}"></script>
-						<script src="{{asset('js/uisearch.js')}}"></script>
-						<script>
-							new UISearch( document.getElementById( 'sb-search' ) );
-						</script>
-						<!----//search-scripts---->
-				    <ul class="icon1 sub-icon1 profile_img">
-					 <li><a class="active-icon c1" href="#"> </a>
-						<ul class="sub-icon1 list">
-						  <div class="product_control_buttons">
-						  	<a href="{{path('fos_user_profile_edit')}}"><img src="{{asset('images/edit.png')}}" alt=""/></a>
-						  		<a href="#"><img src="{{asset('images/close_edit.png')}}" alt=""/></a>
-						  </div>
-						   <div class="clear"></div>
-                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-
-								<li class="list_img"><img src="{{ 'http://localhost/Image/' ~app.user.getPhoto()}}"style="width: 50px;height: 49px" alt=""/></li>
-                                                  <li class="list_desc"><h4><center> <a href="{{ path('fos_user_profile_show') }}">{{ app.user.username }}</a></center></h4><span class="actual"> </span></li>
-                                                   <center>    
-                                                  <div class="login_buttons">
-                                                          <div class="check_button"><a href="{{ path('fos_user_security_logout') }}">Se déconnecter </a></div>   
-                                                       {% if is_granted('ROLE_ADMIN') %}
-                                                           <div class="login_button"><a href="{{path('admin_accueil')}}">Administration </a></div>
-                                                        {% endif %}
-                                                  </div>
-                                                   </center>
-                                                  {% else %}
-						  <div class="login_buttons">
-							 <div class="check_button"><a href="{{ path('fos_user_security_login') }}">Se connecter </a></div>
-							 <div class="login_button"><a href="{{ path('fos_user_registration_register') }}">Ouvrir un compte</a></div>
-                                                          <div class="clear"></div>
-                                                  </div>
-                                                  {% endif %}
-						</ul>
-					 </li>
-				   </ul>
-		           <div class="clear"></div>
-	       </div>
-	      </div>
-		 </div>
-	    </div>
-	</div>
-                                                                  {%endblock%}
 
                                      {% block content %}
                         

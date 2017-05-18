@@ -58,13 +58,97 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 .testimonails span b{font-weight: 400;}
 .carousel-indicators li{border: 1px solid #ccc;}
 .carousel-indicators{bottom: 0;}
+/***********************it's time to (changing words)*********************************************/
+::selection {
+    background: #ed8323;
+    color: #fff;
+}
+.tagline {
+    font-size: 70px;
+    font-family: 'Roboto', arial, helvetica, sans-serif;
+    font-weight: 100;
+    color: #fff;
+    position: absolute;
+    line-height: 1em;
+    margin-top: 100px;
+    overflow: hidden;
+    height: 85px;
+    top: 0;
+    left: 0;
+}
+.tagline > span {
+    float: left;
+    display: block;
+    height: 85px;
+    line-height: 85px;
+    color: rgba(255,255,255,0.85);
+}
+.tagline > ul {
+    height: 85px;
+    line-height: 85px;
+    position: relative;
+    top: 0;
+    display: block;
+    float: left;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 600px;
+}
+.tagline > ul > li {
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding-left: 15px;
+    top: -85px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+    -webkit-transform-origin: 25% 0;
+    -moz-transform-origin: 25% 0;
+    -o-transform-origin: 25% 0;
+    -ms-transform-origin: 25% 0;
+    transform-origin: 25% 0;
+    width: 100%;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+.tagline > ul > li.active {
+    top: 0;
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+.tagline > ul > li.vs-out {
+    top: 85px;
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+    -o-transform: rotateX(-180deg);
+    -ms-transform: rotateX(-180deg);
+    transform: rotateX(-180deg);
+}
 
 
 
-
-
-
-
+/******************************************************************/
 /*contact*/
 .contactform textarea,.contactform input{width: 100%;padding:1em;border:1px solid #ccc;margin-bottom: 1em;border-radius: 0;outline: none;}
 /*contact*/

@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="note")
  * @ORM\Entity
+ * (repositoryClass="PI\ForumBundle\Repository\Note")
  */
 class Note
 {
@@ -35,12 +36,77 @@ class Note
      */
     private $idRando;
 
+
     /**
      * @var integer
      *
-     * @ORM\Column(name="note", type="integer", nullable=false)
+     * @ORM\Column(name="note", type="integer", nullable=true)
      */
     private $note;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
+
+    /**
+     * @param int $idUser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdRando()
+    {
+        return $this->idRando;
+    }
+
+    /**
+     * @param int $idRando
+     */
+    public function setIdRando($idRando)
+    {
+        $this->idRando = $idRando;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * @param int $note
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+    }
 
 
 }

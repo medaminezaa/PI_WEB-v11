@@ -1,3 +1,6 @@
+pi_amine:
+    resource: "@PIAmineBundle/Resources/config/routing.yml"
+    prefix:   /
 p_iguides:
     resource: "@PIguidesBundle/Resources/config/routing.yml"
     prefix:   /
@@ -37,3 +40,22 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+#HWIOAuthBundle routes
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /connect
+
+
+facebook_login:
+    path: /login/check-facebook
+pianosolo_weather:
+    resource: "@PianoSoloWeatherBundle/Resources/config/routing.yml"

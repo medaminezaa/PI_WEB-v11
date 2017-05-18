@@ -82,8 +82,115 @@ fos_user:
    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
    firewall_name: main
    user_class: MyApp\UserBundle\Entity\User
+   #registration:
+        #confirmation:
+            #enabled: true
    #from email est obligatoire en Symfony3
    from_email:
-                                       address: "noreply@yourcompany.com"
-                                       sender_name: "No Reply"
+        address: "randonnitunisie@gmail.com"
+        sender_name: "No reply/config.yml"
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:       "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\"" # "C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\"" for Windows users
+        options:    []
+
+
+gregwar_captcha: ~
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        user_image:
+            uri_prefix:         /images/users
+            upload_destination: 'C:/xampp/htdocs/Image'
+            delete_on_update:   true
+            delete_on_remove:   true
+        product_image:
+            uri_prefix:         /images/materiel
+            upload_destination: 'C:/xampp/htdocs/Image'
+            inject_on_load:     false
+            delete_on_remove:   true
+        product_sujet:
+            uri_prefix:         /images/sujet
+            upload_destination: 'C:/xampp/htdocs/Image'
+            inject_on_load:     false
+            delete_on_remove:   true
+        product_rando:
+            uri_prefix:         /images/Randonnee
+            upload_destination: 'C:/xampp/htdocs/Image'
+            inject_on_load:     false
+            delete_on_remove:   true
+
+hwi_oauth:
+    http_client:
+      # proxy: "facebook.com:8080"
+        verify_peer: false
+    connect:
+        account_connector:   my_user_provider
+        confirmation: true
+        registration_form: fos_user.registration.form.factory
+
+
+
+    # list of names of the firewalls in which this bundle is active, this setting MUST be set
+    firewall_names: [main]
+    fosub:
+        username_iterations: 30
+        properties:
+            facebook: facebookID
+    resource_owners:
+        facebook:
+            type: facebook
+            client_id:           1512795938765767
+            client_secret:       8d81e05a1ec0aa5bb7af92a038073b28
+            scope:         "email"
+
+           # options:
+            #    display: popup
+nomaya_social:
+    buttons:
+        facebook:
+            url:            null
+            locale:         "fr_FR"
+            send:           false
+            width:          300
+            showFaces:      false
+            layout:         "button_count"
+        twitter:
+            url:            null
+            locale:         "fr"
+            message:        "Je veux partager ça avec vous"
+            text:           "Tweet"
+            via:            "L'Equipe cartedevisitevirtuelle.fr"
+            tag:            "ttot"
+        googleplus:
+            url:            null
+            locale :        "fr"
+            size :          "medium"
+            annotation :    "bubble"
+            width :         300
+        linkedin:
+            url:            null
+            locale:         "fr_FR"
+            counter:        "right"
+        pinterest:
+            url:            null
+    links:
+        facebook:           "http://www.facebook.com/yann.chauvel"
+        googleplus:         "https://plus.google.com/105931415830389032796"
+    theme:                  'default' # optional
+piano_solo_weather:
+    api_key: "6d253903ad4386ba93ff18344f454000" # Required (OpenWeatherMap Api Key)
+    options:
+        download_csv: false # Default True
+        cache: false # Default False (To use cache the system needs Php-Apc cache)
+
+ivory_google_map:
+    map:
+            debug: "%kernel.debug%"
+            language: "%locale%"
+            api_key: AIzaSyA4cvLk4O77Ay_B4it55Y3bkpHHC-xt5iI
 

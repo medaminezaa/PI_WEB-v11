@@ -1,3 +1,0 @@
-pi_azmi_homepage:
-    path:     /guide
-    defaults: { _controller: PIAzmiBundle:Default:index }

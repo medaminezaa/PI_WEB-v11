@@ -25,6 +25,20 @@ class AppKernel extends Kernel
             new PI\GestionRandonneurBundle\PIGestionRandonneurBundle(),
             new PI\ReclamationBundle\PIReclamationBundle(),
             new PI\guidesBundle\PIguidesBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+            new Ob\HighchartsBundle\ObHighchartsBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+            new Nomaya\SocialBundle\NomayaSocialBundle(),
+            new blackknight467\StarRatingBundle\StarRatingBundle(),
+            new HWI\Bundle\OAuthBundle\HWIOAuthBundle(),
+            new PI\AmineBundle\PIAmineBundle(),
+            new PianoSolo\WeatherBundle\PianoSoloWeatherBundle(),
+            new Ivory\GoogleMapBundle\IvoryGoogleMapBundle(),
+
+
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

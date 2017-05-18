@@ -20,7 +20,7 @@
    {% block login %}
                 <link rel="stylesheet" href="{{ asset('css/stylelogin.css')}}">
 
-          <div class="wrapper">
+          <div class="wrapper" style="height: 650px">
 
           <div class="containerlogin">
 
@@ -41,7 +41,7 @@
                 <script src="{{ asset('js/jquery.min.js')}}"></script>
 
         <script src="{{ asset('js/indexlogin.js')}}"></script>
-                                                            {%endblock%}
+   {%endblock%}
             
         <div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}

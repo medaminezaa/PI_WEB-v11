@@ -1,3 +1,18 @@
 admin_accueil:
     path:     /admin/Accueil
     defaults: { _controller: PIGestionAdminBundle:Default:index }
+admin_affiche:
+    path:     /admin/AfficheAdmins
+    defaults: { _controller: PIGestionAdminBundle:Admin:afficheListe}
+Admin_supprimer:
+    path:     /admin/supprimerAdmin/{id}
+    defaults: { _controller: PIGestionAdminBundle:Admin:supprimer }
+Admin_desactiver:
+    path:     /admin/desactiverAdmin/{id}
+    defaults: { _controller: PIGestionAdminBundle:Admin:desactiver }
+Admin_activer:
+    path:     /admin/activerAdmin/{id}
+    defaults: { _controller: PIGestionAdminBundle:Admin:activer }
+admin_promote:
+    path:     /admin/promoteAdmin/{id}
+    defaults: { _controller: PIGestionAdminBundle:Admin:promote }

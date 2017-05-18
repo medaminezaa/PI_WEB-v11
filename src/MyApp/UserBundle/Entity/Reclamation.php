@@ -3,12 +3,13 @@
 namespace MyApp\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Reclamation
  *
  * @ORM\Table(name="reclamation")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="PI\MaterielBundle\Repository\Reclamation")
  */
 class Reclamation
 {
@@ -37,8 +38,12 @@ class Reclamation
 
     /**
      * @var \DateTime
-     *
+     * @Assert\Date()
      * @ORM\Column(name="date_achat", type="date", nullable=false)
+     * @Assert\Expression(
+     * "this.getDateAchat() > this.getDateEnvoi()",
+     *  message="Il faut que la date achat soit inferieure a la date d'aujourd'hui"
+     * )
      */
     private $dateAchat;
 
@@ -54,21 +59,219 @@ class Reclamation
      *
      * @ORM\Column(name="validitÃ©e", type="integer", nullable=true)
      */
+
     private $validitã©e;
 
     /**
-     * @var integer
      *
-     * @ORM\Column(name="RefMateriel", type="integer", nullable=false)
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\Materiel")
+     * @ORM\JoinColumn(referencedColumnName="id",nullable=true,onDelete="SET NULL")
      */
     private $refmateriel;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="mailClient", type="string", length=300, nullable=false)
+     *
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\User")
+     * @ORM\JoinColumn(referencedColumnName="id")
      */
-    private $mailclient;
+    private $idclient;
+
+
+    /**
+     * @ORM\Column(type="string",length=2500)
+     */
+    private $reponse = "Un adminsatrateur vous aidera dans un bref temps";
+
+    /**
+     * @return mixed
+     */
+    public function getReponse()
+    {
+        return $this->reponse;
+    }
+
+    /**
+     * @param mixed $reponse
+     */
+    public function setReponse($reponse)
+    {
+        $this->reponse = $reponse;
+    }
+
+
+    /**
+     * @ORM\Column(type="string",length=255)
+     */
+    private $etatReclamation = "en cours";
+
+    /**
+     * @return mixed
+     */
+    public function getEtatReclamation()
+    {
+        return $this->etatReclamation;
+    }
+
+    /**
+     * @param mixed $etatReclamation
+     */
+    public function setEtatReclamation($etatReclamation)
+    {
+        $this->etatReclamation = $etatReclamation;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypereclamation()
+    {
+        return $this->typereclamation;
+    }
+
+    /**
+     * @param string $typereclamation
+     */
+    public function setTypereclamation($typereclamation)
+    {
+        $this->typereclamation = $typereclamation;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateAchat()
+    {
+        return $this->dateAchat;
+    }
+
+    /**
+     * @param \DateTime $dateAchat
+     */
+    public function setDateAchat($dateAchat)
+    {
+        $this->dateAchat = $dateAchat;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateEnvoi()
+    {
+        return $this->dateEnvoi;
+    }
+
+    /**
+     * @param \DateTime $dateEnvoi
+     */
+    public function setDateEnvoi($dateEnvoi)
+    {
+        $this->dateEnvoi = $dateEnvoi;
+    }
+
+    /**
+     * @return int
+     */
+    public function getValiditã©e()
+    {
+        return $this->validitã©e;
+    }
+
+    /**
+     * @param int $validitã©e
+     */
+    public function setValiditã©e($validitã©e)
+    {
+        $this->validitã©e = $validitã©e;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRefmateriel()
+    {
+        return $this->refmateriel;
+    }
+
+    /**
+     * @param int $refmateriel
+     */
+    public function setRefmateriel($refmateriel)
+    {
+        $this->refmateriel = $refmateriel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdclient()
+    {
+        return $this->idclient;
+    }
+
+    /**
+     * @param mixed $idclient
+     */
+    public function setIdclient($idclient)
+    {
+        $this->idclient = $idclient;
+    }
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="MyApp\UserBundle\Entity\User")
+     * @ORM\JoinColumn(referencedColumnName="id", nullable=true )
+     */
+    private $idAdmin;
+
+    /**
+     * @return mixed
+     */
+    public function getIdAdmin()
+    {
+        return $this->idAdmin;
+    }
+
+    /**
+     * @param mixed $idAdmin
+     */
+    public function setIdAdmin($idAdmin)
+    {
+        $this->idAdmin = $idAdmin;
+    }
 
 
 }
